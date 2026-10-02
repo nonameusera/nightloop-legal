@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightloop — Privacy Policy</title>
+<style>
+  :root { --accent: #664CD6; --text: #1c1a26; --muted: #6b6580; --bg: #faf9fd; --line: #e6e2f2; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 32px; margin: 0 0 4px; }
+  .updated { color: var(--muted); font-size: 14px; margin-bottom: 36px; }
+  h2 { font-size: 21px; margin: 36px 0 10px; color: var(--accent); }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  .brand { color: var(--accent); font-weight: 700; }
+  .lang { float: right; font-size: 14px; }
+  .short { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 4px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: 14px; }
+  @media (max-width: 560px) { table, thead, tbody, tr, th, td { display: block; } thead { display: none; }
+    td { border: 0; padding: 2px 0; } tr { border-bottom: 1px solid var(--line); padding: 8px 0; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="lang" href="privacy-fr.html" hreflang="fr">Français</a>
+  <h1><span class="brand">Nightloop</span> — Privacy Policy</h1>
+  <p class="updated">Last updated: October 2, 2026</p>
+
+  <p>Nightloop ("we", "us") is a sleep app with Nilo, a plush mascot who listens at night and
+  tells you about it in the morning. It is operated by Côme Delamare (sole trader, Malta). This
+  policy explains what data the app handles, where it goes, and what your rights are.</p>
+
+  <div class="short">
+    <p><b>The short version.</b> Your nights stay on your iPhone: the night recordings are never
+    uploaded. If you turn on <i>personal lines</i>, only the words Nilo heard you say are sent,
+    so he can answer them; we don't keep them. No ads, no tracking, and we never sell your data.</p>
+  </div>
+
+  <h2>1. What stays on your iPhone</h2>
+  <ul>
+    <li><b>Night recordings.</b> When the night recorder is on, the app uses the microphone
+        during the night. Apple's on-device sound recognition picks out sleep talk, snoring and
+        laughter, and the app keeps only a few seconds around each moment. Clips are deleted
+        automatically after 7 days, and you can delete them all at any time in
+        <i>Me › Privacy</i>. They are never uploaded.</li>
+    <li><b>What you said.</b> Sleep talk is transcribed on your iPhone with Apple's on-device
+        speech recognition.</li>
+    <li><b>Your sleep journal.</b> Morning check-ins, bedtimes and wake times, your sleep age,
+        and the answers you give when you start (including your birth year, used only to compare
+        your sleep age with your real age).</li>
+    <li><b>Apple Health.</b> If you connect it, Nightloop reads your sleep data (read only) to show
+        your nights. It never writes to Apple Health, never uploads this data, and never uses it
+        for advertising or marketing.</li>
+    <li><b>Alarms, reminders and sounds.</b> Alarms and notifications are scheduled on the device.
+        A sound you import for your alarm stays on the device.</li>
+    <li><b>Preferences</b>, such as your alarm settings and whether Nilo's voice is on.</li>
+  </ul>
+  <p>If you use iCloud Backup, iOS may include this data in your device backup, which Apple
+  protects under its own terms. Deleting the app deletes this data from your iPhone.</p>
+
+  <h2>2. What leaves your iPhone</h2>
+
+  <h3>Personal lines (only if you allow them)</h3>
+  <p>When Nilo heard clear words in your sleep, he can answer them with a line written just
+  for you. The first time, the app asks for your permission; you can change it any time in
+  <i>Me › Personal lines</i>. When it is on:</p>
+  <ul>
+    <li>Only the <b>text</b> of what you said is sent (never the recording), to our server
+        (a Supabase function), at most a few times per night.</li>
+    <li><b>Anthropic</b> (Claude) receives those words to write Nilo's answer.
+        <b>ElevenLabs</b> receives Nilo's written answer (which may quote your words) to turn it
+        into Nilo's voice.</li>
+    <li>The audio comes straight back to your iPhone and is kept with that night.
+        <b>We don't store your words, Nilo's answer or the audio on our servers.</b></li>
+  </ul>
+
+  <h3>Proof of your subscription (no account)</h3>
+  <p>Personal lines are for subscribers. With each request, the app sends the proof of your
+  subscription that Apple signs on your iPhone (the subscription's transaction number, product and
+  dates; never your name, Apple ID or payment details). Our server checks Apple's signature and
+  counts how many personal lines that subscription asked for today, to prevent abuse and control
+  costs. Only a scrambled (hashed) form of the transaction number is stored with the count, and
+  counts are deleted after 2 days. There is no account to create.</p>
+
+  <h3>Nilo's recorded lines</h3>
+  <p>The app downloads Nilo's recorded lines (text and audio) from our servers (Supabase and
+  Cloudflare). These downloads contain no personal data, apart from what any internet request
+  includes, such as your IP address, which our providers may log for security.</p>
+
+  <h3>Anonymous Smart alarm report (you can turn it off)</h3>
+  <p>After a night with the Smart alarm, the app sends one anonymous report to our
+  database (Supabase), so we can check that Nilo wakes people at the right moment and tune it:
+  whether he woke you early and why (movement or voice heard), by how many minutes, how long you
+  slept (rounded to 5 minutes), how many movements and voice sounds he heard in the window, your
+  morning mood if you did the check-in, the alarm sound family and the alarm's settings. It contains
+  <b>no recording, no words, no account or device identifier and no time of day</b> (only the date
+  is kept), and nothing in it links it to you. You can turn it off in <i>Me › Privacy</i>.
+  Apple Health data is never part of it.</p>
+
+  <h3>Subscriptions</h3>
+  <p>Payments are processed entirely by Apple; we never see your payment details.
+  <b>RevenueCat</b> receives your subscription transactions (product, dates, status) with a
+  random app identifier, so we can check and understand subscriptions.</p>
+
+  <h2>3. What we don't do</h2>
+  <ul>
+    <li>No ads, no advertising identifiers, and no tracking across other apps or websites.</li>
+    <li>No selling or renting of your data.</li>
+    <li>No analytics or crash-reporting tools in the app, apart from the anonymous Smart alarm report
+        described above.</li>
+    <li>No access to your location, contacts or photos.</li>
+    <li>Your night recordings and your Apple Health data never leave your iPhone.</li>
+  </ul>
+
+  <h2>4. Service providers</h2>
+  <table>
+    <thead><tr><th>Provider</th><th>What it does</th><th>What it receives</th></tr></thead>
+    <tbody>
+      <tr><td><b>Supabase</b> (USA)</td><td>Runs our server functions and database</td>
+          <td>Your subscription proof (checked, then a hashed number with the daily count); your words in transit for personal lines; anonymous Smart alarm reports</td></tr>
+      <tr><td><b>Anthropic</b> (USA)</td><td>Writes Nilo's personal answers</td>
+          <td>The words you said (only with personal lines on)</td></tr>
+      <tr><td><b>ElevenLabs</b> (USA)</td><td>Gives Nilo his voice</td>
+          <td>Nilo's written answer (only with personal lines on)</td></tr>
+      <tr><td><b>Cloudflare</b></td><td>Stores and serves Nilo's recorded lines</td>
+          <td>No personal data (standard request data such as IP address)</td></tr>
+      <tr><td><b>RevenueCat</b> (USA)</td><td>Subscription status</td>
+          <td>Purchase transactions and a random app identifier</td></tr>
+      <tr><td><b>Apple</b></td><td>Payments; on-device sound and speech recognition, Apple Health, alarms</td>
+          <td>Payments only; the on-device features run on your iPhone</td></tr>
+    </tbody>
+  </table>
+  <p>These providers process data on our behalf under their data-processing terms, and may keep
+  it for a limited time for security and abuse monitoring as described in their own privacy
+  policies. Anthropic's commercial terms do not allow it to use data sent through its API to
+  train its models.</p>
+
+  <h2>5. Why we can use your data (legal bases)</h2>
+  <ul>
+    <li><b>Your consent</b> for personal lines. You can withdraw it at any time in
+        <i>Me › Personal lines</i>; nothing more is sent after that.</li>
+    <li><b>Our contract with you</b> to provide your subscription.</li>
+    <li><b>Our legitimate interests</b> to keep the service safe and affordable (checking the
+        subscription and the daily count of personal lines, security logs).</li>
+  </ul>
+  <p>Data that stays on your iPhone (section 1) is not sent to us.</p>
+
+  <h2>6. How long we keep data</h2>
+  <ul>
+    <li><b>On your iPhone:</b> night clips for 7 days; everything else until you delete it or
+        the app.</li>
+    <li><b>On our servers:</b> no words, answers or audio. The daily count of personal lines (stored under a hashed
+        subscription number) is deleted after 2 days.</li>
+    <li><b>Anonymous Smart alarm reports:</b> kept for up to 24 months as statistics, then deleted.</li>
+    <li><b>Subscriptions:</b> RevenueCat and Apple keep transaction records as long as needed for
+        accounting and legal obligations.</li>
+  </ul>
+
+  <h2>7. International transfers</h2>
+  <p>Some providers are based in, or store data in, the United States. When personal data is
+  transferred outside the European Economic Area, we rely on the safeguards in our providers'
+  data-processing terms, such as the European Commission's Standard Contractual Clauses.</p>
+
+  <h2>8. Your rights</h2>
+  <p>Depending on where you live (including under the GDPR if you are in the EU/EEA), you have
+  the right to access, correct, export, restrict or delete your personal data, to object to its
+  use, and to withdraw your consent at any time. Most of your data is on your iPhone and in your
+  hands: you can delete recordings, disconnect Apple Health, turn off personal lines, or delete
+  the app. For anything on our side, email us. You can also lodge a complaint with a supervisory
+  authority, such as the Information and Data Protection Commissioner in Malta.</p>
+
+  <h2>9. Children</h2>
+  <p>Nightloop is not directed at children under 13, and we do not knowingly collect personal data
+  from them.</p>
+
+  <h2>10. Security</h2>
+  <p>Data is sent over encrypted connections (TLS). Our database uses access controls, including
+  row-level security, and our providers' keys are kept on our servers, never in the app. No
+  system is perfectly secure; if a breach affects your data, we will notify you as required by
+  law.</p>
+
+  <h2>11. Changes</h2>
+  <p>We may update this policy as the app evolves. Material changes will be shown on this page
+  with a new "last updated" date, and in the app when they affect what is sent from your
+  iPhone.</p>
+
+  <h2>12. Contact</h2>
+  <p>For any privacy question or request:<br>
+  <a href="mailto:app.chaptr@gmail.com">app.chaptr@gmail.com</a></p>
+
+  <footer>
+    <a href="terms.html">Terms of Use</a> · © 2026 Nightloop — Côme Delamare, Malta
+  </footer>
+</main>
+</body>
+</html>
