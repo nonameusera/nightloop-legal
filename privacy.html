@@ -31,7 +31,7 @@
 <body>
 <main>
   <h1><span class="brand">Nightloop</span> — Privacy Policy</h1>
-  <p class="updated">Last updated: October 2, 2026</p>
+  <p class="updated">Last updated: October 5, 2026</p>
 
   <p>Nightloop ("we", "us") is a sleep app with Nilo, a plush mascot who listens at night and
   tells you about it in the morning. It is operated by Côme Delamare (sole trader, Malta). This
@@ -46,18 +46,24 @@
   <h2>1. What stays on your iPhone</h2>
   <ul>
     <li><b>Night recordings.</b> When the night recorder is on, the app uses the microphone
-        during the night. Apple's on-device sound recognition picks out sleep talk, snoring and
-        laughter, and the app keeps only a few seconds around each moment. Clips are deleted
+        during the night. A sound recognition model that runs only on your iPhone (YAMNet, an open-source model
+        by Google) picks out sleep talk, snoring and laughter, and the app keeps only a few seconds around each moment. Clips are deleted
         automatically after 7 days, and you can delete them all at any time in
         <i>Me › Privacy</i>. They are never uploaded.</li>
+    <li><b>Sound measurements.</b> Every 30 seconds of the night, the app also keeps a few numbers
+        about the sound (how loud it was, the background noise, short noise bursts, a breathing-like
+        rhythm, and what the sound model heard), never the sound itself, plus whether your iPhone was
+        unlocked. They are used to estimate your sleep stages when you don't wear a watch. They stay on
+        your iPhone and are deleted with the night after 7 days.</li>
     <li><b>What you said.</b> Sleep talk is transcribed on your iPhone with Apple's on-device
         speech recognition.</li>
     <li><b>Your sleep journal.</b> Morning check-ins, bedtimes and wake times, your sleep age,
         and the answers you give when you start (including your birth year, used only to compare
         your sleep age with your real age).</li>
-    <li><b>Apple Health.</b> If you connect it, Nightloop reads your sleep data (read only) to show
-        your nights. It never writes to Apple Health, never uploads this data, and never uses it
-        for advertising or marketing.</li>
+    <li><b>Apple Health.</b> If you connect it, Nightloop reads your sleep data (read only),
+        including the sleep stages your watch, ring or band measures, to show your nights, your sleep
+        stages and your sleep age. It never writes to Apple Health, never uploads this data, and never
+        uses it for advertising or marketing.</li>
     <li><b>Alarms, reminders and sounds.</b> Alarms and notifications are scheduled on the device.
         A sound you import for your alarm stays on the device.</li>
     <li><b>Preferences</b>, such as your alarm settings and whether Nilo's voice is on.</li>
@@ -76,7 +82,8 @@
         (a Supabase function), at most a few times per night.</li>
     <li><b>Anthropic</b> (Claude) receives those words to write Nilo's answer.
         <b>ElevenLabs</b> receives Nilo's written answer (which may quote your words) to turn it
-        into Nilo's voice.</li>
+        into Nilo's voice. If ElevenLabs is unavailable, <b>WaveSpeed AI</b>, which runs the same
+        ElevenLabs voice model, receives that answer instead.</li>
     <li>The audio comes straight back to your iPhone and is kept with that night.
         <b>We don't store your words, Nilo's answer or the audio on our servers.</b></li>
   </ul>
@@ -104,6 +111,14 @@
   is kept), and nothing in it links it to you. You can turn it off in <i>Me › Privacy</i>.
   Apple Health data is never part of it.</p>
 
+  <h3>Weekly league</h3>
+  <p>After each morning check-in, the app sends your <b>username, your avatar and your points for
+  the week</b> to our database (Supabase), with your subscription proof. They are stored under a
+  hashed subscription number, never your name or Apple ID, and shown to the other players of your
+  league group, who see nothing else about you. Usernames that break our rules are replaced by a
+  default one. You can report or block a player by pressing and holding their name; reports are kept
+  so we can review them. League data is deleted after 5 weeks.</p>
+
   <h3>Subscriptions</h3>
   <p>Payments are processed entirely by Apple; we never see your payment details.
   <b>RevenueCat</b> receives your subscription transactions (product, dates, status) with a
@@ -124,16 +139,18 @@
     <thead><tr><th>Provider</th><th>What it does</th><th>What it receives</th></tr></thead>
     <tbody>
       <tr><td><b>Supabase</b> (USA)</td><td>Runs our server functions and database</td>
-          <td>Your subscription proof (checked, then a hashed number with the daily count); your words in transit for personal lines; anonymous Smart alarm reports</td></tr>
+          <td>Your subscription proof (checked, then a hashed number with the daily count); your words in transit for personal lines; anonymous Smart alarm reports; your league username, avatar and weekly points</td></tr>
       <tr><td><b>Anthropic</b> (USA)</td><td>Writes Nilo's personal answers</td>
           <td>The words you said (only with personal lines on)</td></tr>
       <tr><td><b>ElevenLabs</b> (USA)</td><td>Gives Nilo his voice</td>
           <td>Nilo's written answer (only with personal lines on)</td></tr>
+      <tr><td><b>WaveSpeed AI</b></td><td>Gives Nilo his voice when ElevenLabs is unavailable (same voice model)</td>
+          <td>Nilo's written answer (only with personal lines on, and only then)</td></tr>
       <tr><td><b>Cloudflare</b></td><td>Stores and serves Nilo's recorded lines</td>
           <td>No personal data (standard request data such as IP address)</td></tr>
       <tr><td><b>RevenueCat</b> (USA)</td><td>Subscription status</td>
           <td>Purchase transactions and a random app identifier</td></tr>
-      <tr><td><b>Apple</b></td><td>Payments; on-device sound and speech recognition, Apple Health, alarms</td>
+      <tr><td><b>Apple</b></td><td>Payments; on-device speech recognition, Apple Health, alarms</td>
           <td>Payments only; the on-device features run on your iPhone</td></tr>
     </tbody>
   </table>
@@ -146,7 +163,7 @@
   <ul>
     <li><b>Your consent</b> for personal lines. You can withdraw it at any time in
         <i>Me › Personal lines</i>; nothing more is sent after that.</li>
-    <li><b>Our contract with you</b> to provide your subscription.</li>
+    <li><b>Our contract with you</b> to provide your subscription and its weekly league.</li>
     <li><b>Our legitimate interests</b> to keep the service safe and affordable (checking the
         subscription and the daily count of personal lines, security logs).</li>
   </ul>
@@ -159,6 +176,8 @@
     <li><b>On our servers:</b> no words, answers or audio. The daily count of personal lines (stored under a hashed
         subscription number) is deleted after 2 days.</li>
     <li><b>Anonymous Smart alarm reports:</b> kept for up to 24 months as statistics, then deleted.</li>
+    <li><b>Weekly league:</b> your username, avatar and points are deleted after 5 weeks; reports
+        about a username after 6 months.</li>
     <li><b>Subscriptions:</b> RevenueCat and Apple keep transaction records as long as needed for
         accounting and legal obligations.</li>
   </ul>
